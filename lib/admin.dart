@@ -1,3 +1,4 @@
+import 'package:asan_khridari/homepage.dart';
 import 'package:flutter/material.dart';
 
 class Admin extends StatefulWidget {
@@ -47,6 +48,7 @@ class _AdminState extends State<Admin> {
                         ),
                       ),
                     ),
+
                     SizedBox(height: height*0.05,),
                     Row(children:
                     [
@@ -57,11 +59,47 @@ class _AdminState extends State<Admin> {
                         child: Text("Add Product"),
                        ),
                        SizedBox(width: width*0.02,),
-                       ],)
+                       ],),
+                       SizedBox(height: height*0.05,),
+                       Container(
+                         height: height* 0.3,
+                      width: width * 0.9,
+                      decoration: BoxDecoration(
+                         color: Colors.white,),
+                         child: Column(children: [
+                         
+                          Text("Product NamePrice Actions"),
+                          SizedBox(height:height*0.02),
+                          custumrow(width, "Product1\$100"),
+                          custumrow(width, "Product2\$100"),
+                          custumrow(width, "Product3\$100"),
+                         ],)
+                         
+
+
+                       ),
+                       Align(
+                        alignment: Alignment.topLeft,
+                        child: IconButton(
+                          onPressed: (){
+                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage()), (route) => false);
+                          },
+                           icon: Icon(Icons.arrow_back_ios_new_outlined,),
+                          )
+                      )
               ]
               )
               )
               )
               );
   }
+}
+
+Row custumrow(double width,String text){
+  return Row(children: [
+                             SizedBox(width: width * 0.02,),
+                            Text(text),
+                            IconButton(onPressed: (){}, icon: Icon(Icons.edit_rounded)),
+                             IconButton(onPressed: (){}, icon: Icon(Icons.delete_rounded)),
+                          ],);
 }

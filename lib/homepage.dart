@@ -1,4 +1,5 @@
 import 'package:asan_khridari/admin.dart';
+import 'package:asan_khridari/productspage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -31,7 +32,9 @@ class HomePage extends StatelessWidget {
               SizedBox(height: height * 0.025),
               Container(height: height*0.6,decoration: BoxDecoration(image: DecorationImage(image: NetworkImage('https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_1280.jpg'),fit: BoxFit.cover),color: Colors.black),),
               SizedBox(height:height* 0.05,),
-               ElevatedButton(onPressed: (){}, child: Text("View Products")),
+               ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>products()));
+               }, child: Text("View Products")),
              
               SizedBox(height:height* 0.05,),
               ElevatedButton(onPressed: (){
